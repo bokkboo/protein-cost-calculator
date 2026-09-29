@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>단백질 1g당 가격 계산기 | 단백질 가성비 비교</title>
+    <meta name="description" content="제품 가격과 전체 단백질량을 입력해 단백질 1g당·10g당 가격과 1만원당 단백질량을 간편하게 계산하세요.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://YOUR_DOMAIN/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="단백질 1g당 가격 계산기">
+    <meta property="og:description" content="가격과 총 단백질량으로 단백질 제품의 가격 효율을 간편하게 비교하세요.">
+    <meta property="og:url" content="https://YOUR_DOMAIN/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 18h22a10 10 0 0 1 0 20H28v10H18V18zm10 9v2h11a1 1 0 0 0 0-2H28z' fill='white'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="단백질 가격 계산기 홈">PROTEIN VALUE</a>
+    </header>
+
+    <main>
+      <section class="calculator-section" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">단백질 가격 비교 도구</p>
+          <h1 id="page-title">단백질 1g당 가격 계산기</h1>
+          <p>제품 가격과 제품 전체의 총 단백질량을 입력하면 1g당 가격, 10g당 가격, 1만원당 단백질량을 계산합니다.</p>
+        </div>
+
+        <div class="calculator-card">
+          <form id="protein-form" novalidate>
+            <div class="field">
+              <label for="price">제품 가격</label>
+              <div class="input-wrap">
+                <input id="price" name="price" type="number" inputmode="decimal" min="0" step="any" placeholder="예: 5000" aria-describedby="price-hint" required>
+                <span aria-hidden="true">원</span>
+              </div>
+              <p class="field-hint" id="price-hint">실제로 구매하는 제품의 가격</p>
+            </div>
+
+            <div class="field">
+              <label for="total-protein">제품 전체의 총 단백질량</label>
+              <div class="input-wrap">
+                <input id="total-protein" name="totalProtein" type="number" inputmode="decimal" min="0" step="any" placeholder="예: 18" aria-describedby="protein-hint" required>
+                <span aria-hidden="true">g</span>
+              </div>
+              <p class="field-hint" id="protein-hint">1회 제공량이 아닌 제품 전체 기준</p>
+            </div>
+
+            <p class="error-message" id="error-message" role="alert" aria-live="assertive"></p>
+            <button type="submit">계산하기</button>
+          </form>
+
+          <section class="results" aria-labelledby="results-title" aria-live="polite">
+            <div class="results-heading">
+              <h2 id="results-title">계산 결과</h2>
+              <span id="result-status">값을 입력해 주세요</span>
+            </div>
+            <dl>
+              <div class="result-row featured">
+                <dt>단백질 1g당 가격</dt>
+                <dd id="price-per-gram">—</dd>
+              </div>
+              <div class="result-row">
+                <dt>단백질 10g당 가격</dt>
+                <dd id="price-per-10g">—</dd>
+              </div>
+              <div class="result-row">
+                <dt>1만원당 단백질량</dt>
+                <dd id="protein-per-10000">—</dd>
+              </div>
+            </dl>
+          </section>
+        </div>
+      </section>
+
+      <article class="guide">
+        <section>
+          <h2>단백질 1g당 가격은 어떻게 계산하나요?</h2>
+          <p><strong>제품 가격 ÷ 제품 전체의 총 단백질량</strong>으로 계산합니다. 예를 들어 가격이 5,000원이고 총 단백질량이 18g이라면 5,000 ÷ 18로, 약 277.78원/g입니다.</p>
+        </section>
+
+        <section>
+          <h2>단백질 가성비를 비교하는 방법</h2>
+          <p>같은 기준으로 계산한 1g당 가격이 낮을수록 가격 대비 더 많은 단백질을 얻을 수 있습니다. 다만 이 값은 가격 효율을 비교하는 간단한 지표이며, 원재료나 맛, 열량 등 제품의 영양적 가치 전체를 판단하는 기준은 아닙니다.</p>
+        </section>
+
+        <section>
+          <h2>총 단백질량은 어디서 확인하나요?</h2>
+          <p>제품 포장지의 영양성분표에서 단백질 표시를 확인하세요. 제품 전체, 100g, 1회 제공량 등 표시 기준이 다를 수 있으므로 이 계산기에는 <strong>제품 전체에 들어 있는 총 단백질량</strong>을 입력해야 합니다.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>계산 결과는 입력한 값에 따른 참고용 가격 지표입니다.</p>
+    </footer>
+  </body>
+</html>
